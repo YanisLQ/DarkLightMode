@@ -12,11 +12,16 @@ function App() {
 
   useEffect(() => {
     document.body.className = color;
+    if(color === 'light') {
+      setColor('light')
+    } else {
+      setColor('dark')
+    }
   }, [color]);
   return (
     <div className="App">
       <Header color={color} setColor={setColor} />
-        <Todo />
+        <Todo color={color} setColor={setColor} />
       {/* <Example1 />
       <Example2 />
       <Example3 />

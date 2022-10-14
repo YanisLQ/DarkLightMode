@@ -1,11 +1,17 @@
 import {Navbar, Button } from 'react-bootstrap'
+import { useState } from 'react'
+import Light from '../allumer.png';
+import Dark from '../eteindre.png'
 function Header({color, setColor}) {
+    const [isRotated, setIsRotated] = useState(false);
+    const onRotate = () => setIsRotated((rotated) => !isRotated)
 
     const changeColor = () => {
+        onRotate();
         if(color === 'dark'){
             setColor('light')
         } else {
-            setColor('dark')
+            setColor('black')
         }
     }
 
@@ -18,7 +24,12 @@ function Header({color, setColor}) {
                 Nous contacter
             </Navbar.Brand>
             <Navbar.Brand href="#">
-                <Button variant={color} onClick={changeColor}>Change color</Button>
+                {/* <Button className={`card ${isRotated ? 'rotated' : ''}`} variant={color} onClick={changeColor}>{color === 'dark' ? 'Blanc' : 'Noir'}</Button> */}
+                <Button className={`card ${isRotated ? 'rotated' : ''}`} variant={color} onClick={changeColor}>{color === 'dark' ?      
+                <img src={Dark} style={{width:20}} alt="button dark" /> : 
+                <img src={Light} style={{width:20}} alt="button light" />
+                }
+                </Button>
             </Navbar.Brand>
         </Navbar>
     );

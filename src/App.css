@@ -43,3 +43,16 @@
     transform: rotate(360deg);
   }
 }
+
+.card.rotated {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+@keyframes btnLightMode-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

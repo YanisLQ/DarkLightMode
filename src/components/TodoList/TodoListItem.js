@@ -19,7 +19,7 @@ function TodoListItem({listItem, todoList, setTodoList}) {
 }
 
 const itemStyle = {
-    backgroundColor: 'lemonchiffon',
+    // backgroundColor: 'lemonchiffon',
     borderRadius: 12,
     paddingTop: 8,
     paddingBottom: 8,
